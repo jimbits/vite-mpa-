@@ -1,7 +1,7 @@
-import { defineConfig } from "vite";
-import tailwindcss from "@tailwindcss/vite";
-import { buildPagesConfig } from "./vite/config";
-import { multipageDevPlugin, flattenHtmlPlugin } from "./vite/plugins";
+import { defineConfig } from 'vite';
+import tailwindcss from '@tailwindcss/vite';
+import { buildPagesConfig } from './vite/config';
+import { multipageDevPlugin, flattenHtmlPlugin } from './vite/plugins';
 
 export default defineConfig({
   server: {
@@ -9,13 +9,13 @@ export default defineConfig({
   },
   plugins: [
     tailwindcss(),
-    multipageDevPlugin("src/pages"),
-    flattenHtmlPlugin("src/pages"),
+    multipageDevPlugin('src/pages'),
+    flattenHtmlPlugin('src/pages'),
   ],
   build: {
     rollupOptions: {
       // Option 1: Explicit path (recommended)
-      input: buildPagesConfig("src/pages"),
+      input: buildPagesConfig('src/pages'),
 
       // Option 2: Auto-detection with fallback
       // input: buildPagesConfigAuto(),

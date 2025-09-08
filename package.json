@@ -6,10 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    
+    "preview": "vite preview"
   },
   "devDependencies": {
     "@svgr/cli": "^8.1.0",
@@ -22,7 +19,7 @@
   "dependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.13",
-    "glob": "^11.0.3",
+    "glob": "^10.3.7",
     "svgo": "^4.0.0",
     "tailwindcss": "^4.1.13",
     "ts-node": "^10.9.2"
