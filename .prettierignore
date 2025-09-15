@@ -1,0 +1,9 @@
+# Ignore TypeScript files
+*.ts
+*.tsx
+src/**/*.ts
+src/**/*.tsx
+
+# But still format these
+!*.html
+!*.css

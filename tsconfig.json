@@ -1,27 +1,32 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "useDefineForClassFields": true,
-    "module": "ESNext",
+    "forceConsistentCasingInFileNames": true,
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
-"forceConsistentCasingInFileNames":true,
-    /* Bundler mode */
-    "moduleResolution": "bundler",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "allowImportingTsExtensions": true,
-  
-    "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
     "noEmit": true,
-    "types": ["node"],
-
-    /* Linting */
     "strict": true,
+    "skipLibCheck": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+
+    // Modern path mapping with your project structure
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@/icons/*": ["public/icons/*"],
+      "@/utils/*": ["src/ts/utils/*"],
+      "@/components/*": ["src/components/*"],
+      "@/css/*": ["src/css/*"],
+      "@/pages/*": ["src/pages/*"],
+      "@/markdown/*": ["markdown/*"],
+      "@/vite/*": ["vite/*"]
+    }
   },
-  "include": ["src", "index.js"]
+  "include": ["src/**/*", "vite/**/*", "*.ts"]
 }

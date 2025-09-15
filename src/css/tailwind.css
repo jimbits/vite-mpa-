@@ -1,1 +1,44 @@
+/* globals.css - Simple approach using only standard Tailwind */
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-white;
+  }
+
+  body {
+    @apply min-h-screen font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-gray-900 dark:text-white font-semibold;
+  }
+
+  p {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+
+  a {
+    @apply text-blue-600 dark:text-blue-400 hover:underline;
+  }
+}
+
+@layer components {
+  .text-muted {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+
+  .bg-elevated {
+    @apply bg-white dark:bg-gray-800;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6;
+  }
+}

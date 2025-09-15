@@ -1,39 +1,119 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+    <link rel="stylesheet" href="/src/css/tailwind.css" />
+    <script type="module" src="/src/ts/main.ts"></script>
+  </head>
 
-      <head>
-            <meta charset="UTF-8" />
-            <link rel="icon"
-                  type="image/svg+xml"
-                  href="/vite.svg" />
-            <meta name="viewport"
-                  content="width=device-width, initial-scale=1.0" />
-            <title>Vite + TS</title>
-            <link rel="stylesheet"
-                  href="/src/css/tailwind.css">
+  <body class="">
+    <nav class="flex justify-between py-2 px-6">
+      <figure class="inline-flex items-center gap-1.25">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          class="size-6 fill-none stroke-current dark:stroke-gray-500"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23-.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"
+          />
+        </svg>
 
-      </head>
+        <figcaption class="text-xs text-gray-500 dark:stroke-gray-500">
+          Brand
+        </figcaption>
+      </figure>
 
-      <body class=" 
-        bg-gray-100">
-            <nav class="bg-rose-600">
-                  <ul class="flex justify-center gap-8 py-2 text-white font-semibold text-sm uppercase">
-                        <li><a href="./index.html">home</a></li>
-                        <li><a href="./sandbox.html">sandbox</a></li>
-                        <li><a href="./layouts.html">layout</a></li>
-                  </ul>
-            </nav>
-            <header>
-                  <img src="/icons/vite.svg"
-                       alt="temper of the gods"
-                       class=" mx-auto w-48 py-12">
-                  <h1 class="text-center text-2xl">Landing Page</h1>
-            </header>
+      <div class="hidden">
+        <ul
+          class="flex justify-center gap-8 py-2 font-semibold text-sm uppercase"
+        >
+          <li><a href="./index.html">home</a></li>
+          <li><a href="./sandbox.html">sandbox</a></li>
+          <li><a href="./layouts.html">layout</a></li>
+        </ul>
+      </div>
+      <!-- sun -->
+      <button
+        id="colorToggleMode"
+        class="flex flex-col items-center"
+        type="button"
+        title="Toggle page light and dark mode"
+        aria-label="Toggle for page light and dark mode"
+      >
+        <svg
+          id="lightModeIcon"
+          class="fill-none stroke-2 stroke-current w-6 h-6 hidden dark:stroke-gray-400"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg
+          id="darkModeIcon"
+          class="stroke-0 fill-current dark:fill-gray-400 w-6 h-6"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M279.135 512c78.756 0 150.982-35.804 198.844-94.775 28.27-34.831-2.558-85.722-46.249-77.401-82.348 15.683-158.272-47.268-158.272-130.792 0-48.424 26.06-92.292 67.434-115.836 38.745-22.05 28.999-80.788-15.022-88.919A257.936 257.936 0 0 0 279.135 0c-141.36 0-256 114.575-256 256 0 141.36 114.576 256 256 256zm0-464c12.985 0 25.689 1.201 38.016 3.478-54.76 31.163-91.693 90.042-91.693 157.554 0 113.848 103.641 199.2 215.252 177.944C402.574 433.964 344.366 464 279.135 464c-114.875 0-208-93.125-208-208s93.125-208 208-208z"
+          ></path>
+        </svg>
+        <span id="modeText" class="text-xs text-current">dark mode</span>
+        <span class="sr-only">Button toggle for page light and dark mode</span>
+      </button>
+    </nav>
 
+    <main
+      class="min-w-screen min-h-[calc(100dvh-56px)] flex justify-center items-center"
+    >
+      <header
+        class="bg-white text-center dark:bg-gray-800 rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5 w-lg mx-auto"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 500 500"
+          class="w-28 fill-gray-700 mx-auto -translate-x-6"
+        >
+          <path
+            d="M500 499.832c-39.533-1.311-90.64 7.803-118.632-27.006-13.404-16.669-17.712-37.835-19.084-58.792l.02-191.347h-36.377l-.732-.729v-79.497h37.109V38.897h94.238v103.564h43.457v80.226l-43.46-.003-.021 161.693c.916 12.781 4.846 23.899 19.317 25.011 7.8.599 16.292-.433 24.164.006v90.437ZM0 283.951c3.235-2.138 5.557-3.882 9.786-2.695 5.711 21.924 19.376 40.106 39.565 50.661-.327 3.851-3.048 7.359-6.999 7.867-11.298-5.937-25.148-11.283-32.301-22.325-4.117-6.355-6.896-13.915-8.367-21.328-.602-3.035-.316-6.52-1.684-9.263zM265.625 134.196v365.636h-97.168v-91.166l52.448-43.072c6.536-8.677 2.27-18.561-5.079-25.004l-47.369-32.085v-39.627c8.009 4.366 20.437 7.061 29.559 6.338 5.511-.436 18.802-7.746 23.182-11.438 17.905-15.094 9.653-38.053-15.154-31.135-5.49 1.531-10.392 4.692-15.285 7.457l-22.301-10.121v-95.785h97.168Z"
+          />
+          <path
+            d="m99.609 277.144 113.451 71.548c5.343 5.725 3.198 11.506-2.117 16.22-1.549 1.374-3.57 2.372-5.123 3.65-34.424 28.313-69.233 56.162-103.76 84.35 5.422 3.076 15.147 16.212 8.281 21.383-8.321 6.266-18.927-8.385-23.909-13.124-3.159-3.005-7.047-5.727-10.252-8.745l113.27-95.293L82.876 288.35l-3.059-5.354-.714-110.876c-48.88-3.652-82.139-57.225-48.817-98.93 29.379-36.77 93.152-33.963 118.354 6.105 25.181 40.037-5.433 86.675-49.027 92.345l.062 38.341 90.745 38.288 1.481-.007c6.457-4.244 22.591-11.726 29.262-5.853 7.696 6.774-6.98 16.669-12.331 19.269-6.669 3.241-16.619 7.639-23.769 4.522l-85.454-35.732zM83.885 71.132c-28.027 1.97-54.555 27.73-38.38 55.92 19.012 33.135 80.816 27.448 87.64-11.243 4.908-27.823-24.09-46.446-49.26-44.676ZM170.898 0h94.238v93.84h-94.238z"
+          />
+          <path
+            d="M37.487 275.797c4.12 17.27 13.585 29.188 28.279 38.692 2.241 1.45 3.551.528 2.205 4.335-.684 1.936-3.312 3.923-5.476 3.327-3.276-.902-11.755-5.989-14.898-8.044-10.021-6.554-14.361-14.444-16.691-26.167-1.312-6.604-3.342-14.269 6.581-12.143M59.95 274.823c2.883 12.441 11.226 23.859 23.022 29.11-1.007 6-3.409 5.2-7.881 3.218-10.23-4.534-16.796-10.153-19.676-21.25-1.257-4.842-3.437-13.19 4.535-11.078"
+          />
+        </svg>
+        <h1
+          class="text-gray-900 dark:text-gray-700 mt-5 text-5xl uppercase font-extrabold tracking-tight"
+        >
+          Fuctifano
+        </h1>
 
-      </body>
-
-
-
-
+        <p
+          class="text-gray-500 mb-8 dark:text-gray-400 mt-2 text-sm w-5/6 mx-auto"
+        >
+          Amulti page starter kit for web projects.
+        </p>
+      </header>
+    </main>
+  </body>
 </html>
